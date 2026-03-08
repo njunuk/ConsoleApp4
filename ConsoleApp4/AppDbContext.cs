@@ -5,12 +5,13 @@ namespace EFCoreIntro
 {
     public class AppDbContext : DbContext
     {
-        private readonly string _connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Database=newdbbUpdate;TrustServerCertificate=true";
+        private readonly string _connectionString = @"Data Source=VICTUS_LAPTOP\MSQLSERVER;Database=newdbbUpdate;TrustServerCertificate=true";
         public DbSet<Student> Students { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<Kafedra> Kafedras { get; set; }
-        public DbSet<Subject> Subject { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
         public DbSet<Group> Groups { get; set; }
+        public DbSet<StudentGroup> StudentGroups { get; set; }
         public DbSet<Passport> Passports { get; set; }
         public AppDbContext()
         {
@@ -26,7 +27,7 @@ namespace EFCoreIntro
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Student>().ToView("vw_Student").HasNoKey();
+            modelBuilder.Entity<StudentGroup>().ToView("vw_StudentGroups").HasNoKey();
             //teacher
             modelBuilder.Entity<Teacher>(x =>
             {

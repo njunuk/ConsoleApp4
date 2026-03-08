@@ -2,10 +2,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace ConsoleApp4.Entities
 {
-    public enum AttendanceForm
-    {
-        Offline, Online, Hybrid
-    }
+    //public enum AttendanceForm
+    //{
+    //    Offline, Online, Hybrid
+    //}
 
     public class Student
     {
@@ -20,7 +20,7 @@ namespace ConsoleApp4.Entities
         public decimal? Scholarship { get; set; }
         public DateTime Birthday { get; set; }
         [Column("Attendance")]
-        public AttendanceForm AttendanceForm { get; set; }
+        //public AttendanceForm AttendanceForm { get; set; }
 
         [ForeignKey(nameof(Group))]
         public int GroupId { get; set; }

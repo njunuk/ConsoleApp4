@@ -9,7 +9,7 @@ namespace ConsoleApp4.Entities
         public string Name { get; set; } = null!;
         public string Description { get; set; }
         public Kafedra Kafedra { get; set; }
-        public List<Teacher> Teachers { get; set; } = null!;
+        public List<Teacher> Teachers { get; set; } = new List<Teacher>();
         public override string ToString()
         {
             return $"{Id}. {Name} {Description}";
